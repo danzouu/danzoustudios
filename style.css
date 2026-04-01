@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: #0A172A;
+    background: linear-gradient(22deg, rgba(10, 23, 42, 1) 0%, rgba(6, 70, 118, 1) 50%, rgba(66, 16, 75, 1) 100%);
+    color: white;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    height: 80px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar ul li {
+    margin: 0 5px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+    background: #42104B;
+    color: #fff;
+}
+
+/* Responsive Menu Toggle */
+.navbar #click {
+    display: none;
+}
+
+.navbar .menu-btn {
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+}
+
+/* Content Area */
+.content {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 940px) {
+    .navbar .menu-btn {
+        display: block;
+    }
+    .navbar ul {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        background: #0A172A;
+        height: 100vh;
+        width: 100%;
+        text-align: center;
+        display: block;
+        transition: all 0.3s ease;
+    }
+    #click:checked ~ ul {
+        left: 0;
+    }
+    .navbar ul li {
+        width: 100%;
+        margin: 40px 0;
+    }
+    .navbar ul li a {
+        width: 100%;
+        margin-left: -100%;
+        display: block;
+        font-size: 20px;
+        transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    #click:checked ~ ul li a {
+        margin-left: 0px;
+    }
+}
